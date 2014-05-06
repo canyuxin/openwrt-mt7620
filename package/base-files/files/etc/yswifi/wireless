@@ -16,7 +16,7 @@ config wifi-iface
 
 
 config wifi-iface
-        option device 'ra0'
+        option device 'ra1'
         option network 'lan2'
         option mode 'ap'
         option encryption 'psk2+ccmp'
