@@ -1,0 +1,272 @@
+gateway.o: gateway.c \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/stdio.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/features.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_config.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/cdefs.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/include/stddef.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/types.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/wordsize.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/typesizes.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/pthreadtypes.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/endian.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/endian.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/byteswap.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/byteswap.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/byteswap-common.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sgidefs.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_stdio.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/wchar.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/wchar.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_mutex.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/pthread.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sched.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/time.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sched.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/time.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_clk_tck.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/signal.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sigset.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/setjmp.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_pthread.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/include/stdarg.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/stdio_lim.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/stdlib.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/types.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/select.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/select.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/sysmacros.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/alloca.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/syslog.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/syslog.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/signum.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/siginfo.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sigaction.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sigcontext.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sigstack.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sigthread.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/errno.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/errno.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/linux/errno.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm/errno.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm-generic/errno-base.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/string.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/wait.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/resource.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/resource.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/waitflags.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/waitstatus.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/socket.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/uio.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uio.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/socket.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/include-fixed/limits.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/include-fixed/syslimits.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/limits.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/posix1_lim.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/local_lim.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/linux/limits.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_local_lim.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/posix2_lim.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sockaddr.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm/socket.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm/sockios.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm/ioctl.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm-generic/ioctl.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/un.h \
+ common.h ../libhttpd/httpd.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/time.h \
+ safe.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/unistd.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/posix_opt.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/confname.h \
+ /home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/getopt.h \
+ debug.h conf.h gateway.h firewall.h commandline.h auth.h http.h \
+ client_list.h wdctl_thread.h ping_thread.h httpd_thread.h util.h
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/stdio.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/features.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_config.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/cdefs.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/include/stddef.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/types.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/wordsize.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/typesizes.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/pthreadtypes.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/endian.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/endian.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/byteswap.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/byteswap.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/byteswap-common.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sgidefs.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_stdio.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/wchar.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/wchar.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_mutex.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/pthread.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sched.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/time.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sched.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/time.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_clk_tck.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/signal.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sigset.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/setjmp.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_pthread.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/include/stdarg.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/stdio_lim.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/stdlib.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/types.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/select.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/select.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/sysmacros.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/alloca.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/syslog.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/syslog.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/signum.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/siginfo.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sigaction.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sigcontext.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sigstack.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sigthread.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/errno.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/errno.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/linux/errno.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm/errno.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm-generic/errno-base.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/string.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/wait.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/resource.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/resource.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/waitflags.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/waitstatus.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/socket.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/uio.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uio.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/socket.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/include-fixed/limits.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/include-fixed/syslimits.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/limits.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/posix1_lim.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/local_lim.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/linux/limits.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/uClibc_local_lim.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/posix2_lim.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/sockaddr.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm/socket.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm/sockios.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm/ioctl.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/asm-generic/ioctl.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/un.h:
+
+common.h:
+
+../libhttpd/httpd.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/sys/time.h:
+
+safe.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/unistd.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/posix_opt.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/confname.h:
+
+/home/weeds/work/openwrt-mt7620/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.6-linaro_uClibc-0.9.33.2/lib/gcc/mipsel-openwrt-linux-uclibc/4.6.4/../../../../mipsel-openwrt-linux-uclibc/sys-include/bits/getopt.h:
+
+debug.h:
+
+conf.h:
+
+gateway.h:
+
+firewall.h:
+
+commandline.h:
+
+auth.h:
+
+http.h:
+
+client_list.h:
+
+wdctl_thread.h:
+
+ping_thread.h:
+
+httpd_thread.h:
+
+util.h:
