@@ -1,0 +1,24 @@
+config wifi-device 'ra0'
+        option type 'rt2860v2'
+        option mode '9'
+        option txpower '100'
+        option ht '20+40'
+        option country 'US'
+        option channel 'auto'
+
+
+config wifi-iface
+        option device 'ra0'
+        option network 'lan'
+        option mode 'ap'
+        option ssid 'YSWiFi-MT7620N'
+        option encryption 'none'
+
+
+config wifi-iface
+        option device 'ra0'
+        option network 'lan2'
+        option mode 'ap'
+        option encryption 'psk2+ccmp'
+	option key '12345678'
+        option ssid 'MyWiFi-MT7620N'
