@@ -64,6 +64,12 @@ boot() {
 	}
 	rm -f /tmp/wireless.tmp
 
+	# weeds add to support multi vlan
+	cp /etc/yswifi/wireless /etc/config/wireless
+	cp /etc/yswifi/network /etc/config/network
+	cp /etc/yswifi/dhcp /etc/config/dhcp
+	cp /etc/yswifi/firewall /etc/config/firewall
+
 	apply_uci_config
 	
 	# temporary hack until configd exists
