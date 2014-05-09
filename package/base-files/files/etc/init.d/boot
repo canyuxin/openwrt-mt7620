@@ -9,7 +9,7 @@ system_config() {
 
 	local hostname conloglevel buffersize timezone zonename
 
-	config_get hostname "$cfg" hostname 'OpenWrt'
+	config_get hostname "$cfg" hostname 'YSWiFi'
 	echo "$hostname" > /proc/sys/kernel/hostname
 
 	config_get conloglevel "$cfg" conloglevel
@@ -69,6 +69,7 @@ boot() {
 	cp /etc/yswifi/network /etc/config/network
 	cp /etc/yswifi/dhcp /etc/config/dhcp
 	cp /etc/yswifi/firewall /etc/config/firewall
+	cp /etc/yswifi/luci /etc/config/luci
 
 	apply_uci_config
 	
