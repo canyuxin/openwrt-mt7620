@@ -19,6 +19,6 @@ config wifi-iface
         option device 'ra0'
         option network 'lan2'
         option mode 'ap'
+        option ssid 'MyWiFi-MT7620N'
         option encryption 'psk2+ccmp'
 	option key '12345678'
-        option ssid 'MyWiFi-MT7620N'
