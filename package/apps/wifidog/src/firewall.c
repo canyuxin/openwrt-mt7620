@@ -107,7 +107,7 @@ int
 fw_deny(char *ip, char *mac, int fw_connection_state)
 {
     debug(LOG_DEBUG, "Denying %s %s with fw_connection_state %d", ip, mac, fw_connection_state);
-
+	remove_ip_bandwith(ip);
     return iptables_fw_access(FW_ACCESS_DENY, ip, mac, fw_connection_state);
 }
 
@@ -120,6 +120,36 @@ fw_deny(char *ip, char *mac, int fw_connection_state)
  */
 char           *
 arp_get(char *req_ip)
+{
+    FILE           *proc;
+	 char ip[16];
+	 char mac[18];
+	 char * reply = NULL;
+
+    if (!(proc = fopen("/proc/net/arp", "r"))) {
+        return NULL;
+    }
+    //debug(LOG_DEBUG, "call arp_get() begin");
+
+    /* Skip first line */
+	 while (!feof(proc) && fgetc(proc) != '\n');
+
+	 /* Find ip, copy mac in reply */
+	 reply = NULL;
+    while (!feof(proc) && (fscanf(proc, " %15[0-9.] %*s %*s %17[A-Fa-f0-9:] %*s %*s", ip, mac) == 2)) {
+		  if (strcmp(ip, req_ip) == 0) {
+				reply = safe_strdup(mac);
+				break;
+		  }
+    }
+
+    fclose(proc);
+    //debug(LOG_DEBUG, "call arp_get() end %s %p", req_ip, reply);
+
+    return reply;
+}
+char           *
+arp_get_formatB(char *req_ip)
 {
     FILE           *proc;
 	 char ip[16];

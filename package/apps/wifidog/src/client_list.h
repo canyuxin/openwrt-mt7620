@@ -52,6 +52,8 @@ typedef struct	_t_client {
 					     _http_* function is called */
 	t_counters	counters;	/**< @brief Counters for input/output of
 					     the client. */// init by client_list_append() , 初始化为0
+	time_t sessiontimeout; // add by weeds, 2014-05-13
+	time_t start_time;
 } t_client;
 
 // add by lijg, 2013-06-04
@@ -66,6 +68,9 @@ void client_list_init(void);
 
 /** @brief Adds a new client to the connections list */
 t_client *client_list_append(const char *ip, const char *mac, const char *token);
+
+t_client *
+client_list_append_in(const char *ip, const char *mac, const char *token, unsigned long sessiontimeout);
 
 /** @brief Finds a client by its IP and MAC */
 t_client *client_list_find(const char *ip, const char *mac);

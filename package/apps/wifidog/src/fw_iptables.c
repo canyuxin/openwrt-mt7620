@@ -126,6 +126,75 @@ iptables_do_command(const char *format, ...)
 	return rc;
 }
 
+// add by lijg 2014-05-12
+#define LAN_NAME  "br-lan"
+int set_ip_bandwith(const char *ip, unsigned long dbw)
+{
+	static unsigned short initfn = 0;
+	char cmdline[128];
+	do {
+		if (initfn) break;
+
+		// Initialize HTB tree
+		snprintf(cmdline, sizeof(cmdline), "tc qdisc del dev %s root", LAN_NAME);
+		execute(cmdline, 0);
+		snprintf(cmdline, sizeof(cmdline), "tc qdisc add dev %s root handle 1: htb default 1024", LAN_NAME);
+		execute(cmdline, 0);
+		snprintf(cmdline, sizeof(cmdline), "tc class add dev %s parent 1: classid 1:1 htb rate 1024mbit ceil 1024mbit", LAN_NAME);
+		execute(cmdline, 0);
+		snprintf(cmdline, sizeof(cmdline), "tc class add dev %s parent 1:1 classid 1:1024 htb rate 1024mbit  prio 2 quantum 0", LAN_NAME);
+		execute(cmdline, 0);
+		snprintf(cmdline, sizeof(cmdline), "tc qdisc add dev %s parent 1:1024 handle 1024: sfq perturb 10", LAN_NAME);
+		execute(cmdline, 0);
+
+		initfn = 1;
+	} while (0);
+
+
+	unsigned short flowid = 0;
+	sscanf(ip, "%*d.%*d.%*d.%u", &flowid);
+	if (flowid == 0)  {
+		fprintf(stderr, "invalid flowid %s for set!!\n", ip);
+		return -1;
+	}
+	snprintf(cmdline, sizeof(cmdline), "tc class replace dev %s parent 1:1 classid 1:%u htb rate %lukbit  prio 1 quantum 0", 
+		LAN_NAME, flowid, dbw);
+	execute(cmdline, 0);
+	snprintf(cmdline, sizeof(cmdline), "tc qdisc replace dev %s parent 1:%u handle %u: sfq perturb 10", 
+		LAN_NAME, flowid, flowid);
+	execute(cmdline, 0);
+	//snprintf(cmdline, sizeof(cmdline), "tc filter replace dev %s parent 1: protocol ip prio 10 u32 match ip dst %s  flowid 1:%u", 
+	//	LAN_NAME, ip, flowid);  
+	snprintf(cmdline, sizeof(cmdline), "tc filter replace dev %s parent 1: protocol ip prio %u u32 match ip dst %s  flowid 1:%u", 
+		LAN_NAME, flowid, ip, flowid);  
+	execute(cmdline, 0);
+	
+	printf("%s(%d): function over\n", __FUNCTION__, __LINE__);
+	return flowid;
+}
+
+int remove_ip_bandwith(const char *ip)
+{
+	unsigned short flowid = 0;
+	sscanf(ip, "%*d.%*d.%*d.%u", &flowid);
+	if (flowid == 0)  {
+		fprintf(stderr, "invalid flowid %s for remove!!\n", ip);
+		return -1;
+	}
+
+	char cmdline[128];
+	snprintf(cmdline, sizeof(cmdline), "tc filter del dev %s parent 1: protocol ip prio %u u32 match ip dst %s flowid 1:%u", 
+		LAN_NAME, flowid, ip, flowid);
+	execute(cmdline, 0);
+	snprintf(cmdline, sizeof(cmdline), "tc qdisc del dev %s parent 1:%u", 
+		LAN_NAME, flowid);
+	execute(cmdline, 0);
+	snprintf(cmdline, sizeof(cmdline), "tc class del dev %s parent 1:1 classid 1:%u", 
+		LAN_NAME, flowid);
+	execute(cmdline, 0);
+	return 0;
+}
+
 /**
  * @internal
  * Compiles a struct definition of a firewall rule into a valid iptables

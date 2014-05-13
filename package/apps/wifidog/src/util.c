@@ -242,7 +242,7 @@ get_iface_mac(const char *ifname)
 #if defined(__linux__)
 	int r, s;
 	struct ifreq ifr;
-	char *hwaddr, mac[13];
+	char *hwaddr, mac[18];
 
 	strcpy(ifr.ifr_name, ifname);
 
@@ -261,7 +261,7 @@ get_iface_mac(const char *ifname)
 
 	hwaddr = ifr.ifr_hwaddr.sa_data;
 	close(s);
-	snprintf(mac, sizeof(mac), "%02X%02X%02X%02X%02X%02X",
+	snprintf(mac, sizeof(mac), "%02X:%02X:%02X:%02X:%02X:%02X",
 			hwaddr[0] & 0xFF,
 			hwaddr[1] & 0xFF,
 			hwaddr[2] & 0xFF,
@@ -305,7 +305,110 @@ out:
 	return NULL;
 #endif
 }
+char *
+get_iface_mac_formatA(const char *ifname)
+{
+	int r, s;
+	struct ifreq ifr;
+	char *hwaddr, mac[18];
 
+	strcpy(ifr.ifr_name, ifname);
+
+	s = socket(AF_INET, SOCK_DGRAM, 0);
+	if (-1 == s) {
+		debug(LOG_ERR, "get_iface_mac socket: %s", strerror(errno));
+		return NULL;
+	}
+
+	r = ioctl(s, SIOCGIFHWADDR, &ifr);
+	if (r == -1) {
+		debug(LOG_ERR, "get_iface_mac ioctl(SIOCGIFHWADDR): %s", strerror(errno));
+		close(s);
+		return NULL;
+	}
+
+	hwaddr = ifr.ifr_hwaddr.sa_data;
+	close(s);
+	snprintf(mac, sizeof(mac), "%02X:%02X:%02X:%02X:%02X:%02X",
+			hwaddr[0] & 0xFF,
+			hwaddr[1] & 0xFF,
+			hwaddr[2] & 0xFF,
+			hwaddr[3] & 0xFF,
+			hwaddr[4] & 0xFF,
+			hwaddr[5] & 0xFF
+		);
+	printf("%s(%d): mac=%s\n", __FUNCTION__, __LINE__, mac);
+	return safe_strdup(mac);
+}
+char *
+get_iface_mac_formatB(const char *ifname)
+{
+	int r, s;
+	struct ifreq ifr;
+	char *hwaddr, mac[13];
+
+	strcpy(ifr.ifr_name, ifname);
+
+	s = socket(AF_INET, SOCK_DGRAM, 0);
+	if (-1 == s) {
+		debug(LOG_ERR, "get_iface_mac socket: %s", strerror(errno));
+		return NULL;
+	}
+
+	r = ioctl(s, SIOCGIFHWADDR, &ifr);
+	if (r == -1) {
+		debug(LOG_ERR, "get_iface_mac ioctl(SIOCGIFHWADDR): %s", strerror(errno));
+		close(s);
+		return NULL;
+	}
+
+	hwaddr = ifr.ifr_hwaddr.sa_data;
+	close(s);
+	snprintf(mac, sizeof(mac), "%02X-%02X-%02X-%02X-%02X-%02X",
+			hwaddr[0] & 0xFF,
+			hwaddr[1] & 0xFF,
+			hwaddr[2] & 0xFF,
+			hwaddr[3] & 0xFF,
+			hwaddr[4] & 0xFF,
+			hwaddr[5] & 0xFF
+		);
+
+	return safe_strdup(mac);
+}
+char *trans_mac_format(char *dest)
+{
+	char *ptr = NULL;
+	if (NULL == dest)
+	{
+		printf("Null is not permitted!\n");
+		return NULL;
+	}
+	ptr = strchr(dest, ':');
+	while (NULL != ptr)
+	{
+		//printf("ptr=%s\n", ptr);
+		*ptr = '-';
+		ptr = strchr(ptr, ':');
+	}
+	return dest;
+}
+char *trans_mac_formatA(char *dest)
+{
+	char *ptr = NULL;
+	if (NULL == dest)
+	{
+		printf("Null is not permitted!\n");
+		return NULL;
+	}
+	ptr = strchr(dest, '-');
+	while (NULL != ptr)
+	{
+		//printf("ptr=%s\n", ptr);
+		*ptr = ':';
+		ptr = strchr(ptr, '-');
+	}
+	return dest;
+}
 // 获取路由器的WAN口名称, (根据默认路由来查找)
 	char *
 get_ext_iface(void)

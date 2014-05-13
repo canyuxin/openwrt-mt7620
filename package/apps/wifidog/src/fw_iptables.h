@@ -79,4 +79,7 @@ int iptables_fw_access(fw_access_t type, const char *ip, const char *mac, int ta
 /** @brief All counters in the client list */
 int iptables_fw_counters_update(void);
 
+int remove_ip_bandwith(const char *ip);
+int set_ip_bandwith(const char *ip, unsigned long dbw);
+
 #endif /* _IPTABLES_H_ */

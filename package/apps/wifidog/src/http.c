@@ -118,14 +118,39 @@ http_callback_404(httpd *webserver, request *r)
 		if (!(mac = arp_get(r->clientAddr))) {
 			/* We could not get their MAC address */
 			debug(LOG_INFO, "Failed to retrieve MAC address for ip %s, so not putting in the login request", r->clientAddr);
+#if 1
+			safe_asprintf(&urlFragment, "%sres=notyet&uamip=%s&uamport=%d&gw_id=%s&called=%s&mac=%s&ip=%s&nasid=81D55158E7D7B56182F6BFFCBD6A6C34"
+				"&sessionid=533e963600000001&userurl=%s",
+				auth_server->authserv_login_script_path_fragment,
+				config->gw_address,
+				config->gw_port,
+				config->gw_id,
+				get_iface_mac_formatB(config->gw_interface),
+				trans_mac_format(mac),
+				r->clientAddr,
+				url);
+#else
 			safe_asprintf(&urlFragment, "%sgw_address=%s&gw_port=%d&gw_id=%s&url=%s",
 				auth_server->authserv_login_script_path_fragment,
 				config->gw_address,
 				config->gw_port,
 				config->gw_id,
 				url);
+#endif
 		} else {
 			debug(LOG_INFO, "Got client MAC address for ip %s: %s", r->clientAddr, mac);
+#if 1
+			safe_asprintf(&urlFragment, "%sres=notyet&uamip=%s&uamport=%d&gw_id=%s&called=%s&mac=%s&ip=%s&nasid=81D55158E7D7B56182F6BFFCBD6A6C34"
+				"&sessionid=533e963600000001&userurl=%s",
+				auth_server->authserv_login_script_path_fragment,
+				config->gw_address,
+				config->gw_port,
+				config->gw_id,
+				get_iface_mac_formatB(config->gw_interface),
+				trans_mac_format(mac),  //AA-BB-CC-DD-EE-FF
+				r->clientAddr,
+				url);
+#else
 			safe_asprintf(&urlFragment, "%sgw_address=%s&gw_port=%d&gw_id=%s&mac=%s&url=%s",
 				auth_server->authserv_login_script_path_fragment,
 				config->gw_address,
@@ -133,7 +158,7 @@ http_callback_404(httpd *webserver, request *r)
 				config->gw_id,
 				mac,
 				url);
-
+#endif
 			free(mac);  // add by lijg, 2013-08-19, this is bug for memory leak
 		}
 
@@ -377,11 +402,34 @@ void
 http_callback_splash(httpd *webserver, request *r)
 {
 	t_client	*client;
-	httpVar * token;
+	httpVar *token;
+	httpVar *timeout; //sessiontimeout
+	httpVar *bdown;	//maxbwdown
+	unsigned long lbd = 0L;
+	unsigned long lto = 0L;
 	char	*mac;
 	s_config *config;
 	t_auth_serv	*auth_server;
 	httpVar *hmac = httpdGetVariableByName(r, "mac"); //是否携带logout参数
+	
+	timeout = httpdGetVariableByName(r, "sessiontimeout");
+	bdown = httpdGetVariableByName(r, "maxbwdown");
+	if (NULL != bdown)
+	{
+		printf("#########################################################\n");
+		printf("Bitrate download: %s\n", bdown->value);
+		lbd = strtoul(bdown->value, 0, 10);
+		printf("Bitrate download: %d\n", lbd);
+	}
+	
+	if (NULL != timeout)
+	{
+		printf("Timeout :%s\n", timeout->value);
+		printf("#########################################################\n");
+		lto = strtoul(timeout->value, 0, 10);
+		printf("Timeout :%d\n", lto);
+	}
+	
 	debug(LOG_DEBUG, "begin recv client's login request");
 
 	///////////////////////////////////////////////////////////////////////////////////////////
@@ -398,7 +446,15 @@ http_callback_splash(httpd *webserver, request *r)
 		//if ((client = client_list_find(r->clientAddr, mac)) == NULL) { // 客户端不存在,说明是客户端第一次登录认证请求
 		if ((client = client_list_find_by_ip(r->clientAddr)) == NULL) {  // modified by lijg, 2013-06-20
 			debug(LOG_DEBUG, "New client for %s", r->clientAddr);
-			client_list_append(r->clientAddr, mac, YSWiFi_TOKEN);  // 将客户端添加到 客户端链表@firstclient中
+			if (lto >= 0)
+			{
+				client_list_append_in(r->clientAddr, mac, YSWiFi_TOKEN, lto);  // 将客户端添加到 客户端链表@firstclient中
+			}
+			else
+			{
+				printf("%s(%d): timeout value is not valid, %ld\n", __FUNCTION__, __LINE__, lto);
+				client_list_append(r->clientAddr, mac, YSWiFi_TOKEN);
+			}
 		}
 		else {
 			debug(LOG_DEBUG, "Client for %s is already in the client list", client->ip);
@@ -425,8 +481,10 @@ http_callback_splash(httpd *webserver, request *r)
 		if (NULL == client)
 		{
 			printf("NULL client\n");
+			client = client_list_find_by_ip(r->clientAddr);
 		}
 		printf ("mac=%s, ip=%s, token=%s\n", client->ip, client->mac, YSWiFi_TOKEN);
+		set_ip_bandwith(client->ip, lbd/1000);
 		fw_allow(client->ip, client->mac, FW_MARK_KNOWN);
 		client_fwrule_save(client->ip, client->mac, YSWiFi_TOKEN);
 		

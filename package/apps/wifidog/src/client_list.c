@@ -82,8 +82,13 @@ client_list_init(void)
  * @param token Token
  * @return Pointer to the client we just created
  */
+
+t_client * client_list_append(const char *ip, const char *mac, const char *token)
+{
+	client_list_append_in(ip, mac, token, -1);
+}
 t_client         *
-client_list_append(const char *ip, const char *mac, const char *token)
+client_list_append_in(const char *ip, const char *mac, const char *token, unsigned long sessiontimeout)
 {
     t_client         *curclient, *prevclient;
 
@@ -103,6 +108,17 @@ client_list_append(const char *ip, const char *mac, const char *token)
     curclient->token = safe_strdup(token);
     curclient->counters.incoming = curclient->counters.incoming_history = curclient->counters.outgoing = curclient->counters.outgoing_history = 0;
     curclient->counters.last_updated = time(NULL);
+    // add by weeds, 2014-05-13
+    if (sessiontimeout >= 0)
+    {
+		curclient->sessiontimeout = sessiontimeout;
+		curclient->start_time = time(NULL);
+	}
+	else
+	{
+		curclient->sessiontimeout = 0;
+		curclient->start_time = 0;
+	}
 
     if (prevclient == NULL) { // 第一个节点(之前链表为空)
         firstclient = curclient;
@@ -174,7 +190,8 @@ client_list_find_by_mac(const char *mac)
 
     ptr = firstclient;
     while (NULL != ptr) {
-        if (0 == strcmp(ptr->mac, mac))
+		printf("%s(%d): mac=%s\n", __FUNCTION__, __LINE__, ptr->mac);
+        if (0 == strcasecmp(ptr->mac, mac)) // mac format: aa:bb:cc:dd:ee [smaller case]
             return ptr;
         ptr = ptr->next;
     }

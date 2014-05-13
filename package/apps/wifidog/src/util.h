@@ -39,6 +39,9 @@ char *get_iface_ip(const char *ifname);
 
 /* @brief Get MAC address of an interface */
 char *get_iface_mac(const char *ifname);
+char *get_iface_mac_formatA(const char *ifname);
+char *get_iface_mac_formatB(const char *ifname);
+char *trans_mac_format(char *dest);
 
 /* @brief Get interface name of default gateway */
 char *get_ext_iface (void);
